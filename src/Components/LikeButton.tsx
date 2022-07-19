@@ -2,21 +2,16 @@ import React from "react";
 import { BsFillHeartFill } from "react-icons/bs";
 type LikeItem = {
   id: string;
-  likes: number;
 };
 
-const LikeButton = ({ likes, id }: LikeItem) => {
+const LikeButton = ({ id }: LikeItem) => {
   const [isLiked, setIsLiked] = React.useState(false);
-  const [likesCount, setLikesCount] = React.useState(likes);
-
-  console.log(likes);
-  console.log(id);
   const pressLike = () => {
     setIsLiked(!isLiked);
-    setLikesCount(likesCount + 1);
+    const likeID = isLiked ? "unlike" : "like";
     const like = async () => {
       const response = await fetch(
-        `https://api-stg.jam-community.com/interact/like?apikey=___agAFTxkmMIWsmN9zOpM_6l2SkZPPy21LGRlxhYD8`,
+        `https://api-stg.jam-community.com/interact/${likeID}?apikey=___agAFTxkmMIWsmN9zOpM_6l2SkZPPy21LGRlxhYD8`,
         {
           method: "POST",
           headers: {
@@ -30,10 +25,10 @@ const LikeButton = ({ likes, id }: LikeItem) => {
     };
     like();
   };
+
   return (
     <div>
       <button onClick={pressLike}>Like</button>
-
       <BsFillHeartFill className={isLiked ? "liked" : ""} />
     </div>
   );

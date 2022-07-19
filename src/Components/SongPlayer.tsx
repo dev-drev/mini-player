@@ -21,7 +21,7 @@ const SongPlayer = ({
       <p>{name}</p>
       <p>{artist_name}</p>
       <AudioItem audioRef={audioRef} />
-      <LikeButton id={id} likes={likes} />
+      <LikeButton id={id} />
     </div>
   );
 };
