@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
+import SongsList from "./Components/SongsList";
+import { ChakraProvider } from "@chakra-ui/react";
 
 import "./App.css";
-import SongPlayer from "./Components/SongPlayer";
-import SongsList from "./Components/SongsList";
 
 function App() {
   return (
-    <div className="App">
-      <SongsList />
-    </div>
+    <ChakraProvider>
+      <div className="App">
+        <SongsList />
+      </div>
+    </ChakraProvider>
   );
 }
 

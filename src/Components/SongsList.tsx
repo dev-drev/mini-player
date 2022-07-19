@@ -1,3 +1,4 @@
+import { Box, Center, Flex, VStack } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { Song } from "../types/Globals";
 import SongPlayer from "./SongPlayer";
@@ -14,10 +15,15 @@ const SongsList = () => {
     }
     getSongs();
   }, []);
-
+  console.log(songs);
   return (
-    <div className="songs-list">
-      <h1>SongsList</h1>
+    <VStack
+      spacing={"30px"}
+      w="100vw"
+      p="8"
+      flexDirection={"column"}
+      justifyContent="center"
+    >
       {songs.map((item, idx) => {
         console.log(item.id);
         return (
@@ -32,7 +38,7 @@ const SongsList = () => {
           />
         );
       })}
-    </div>
+    </VStack>
   );
 };
 

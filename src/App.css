@@ -4,6 +4,8 @@
 
 .App {
   text-align: center;
+  height: 100vh;
+  background: linear-gradient(#304352, #d7d2cc);
 }
 
 .App-logo {

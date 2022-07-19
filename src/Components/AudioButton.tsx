@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
 
 type AudioInterface = {
@@ -7,7 +8,7 @@ type AudioInterface = {
 export const AudioItem = ({ audioRef }: AudioInterface) => {
   const [isPlaying, setIsPlaying] = React.useState(false);
   return (
-    <div>
+    <Box w="full">
       {" "}
       <button
         onClick={() => {
@@ -19,8 +20,8 @@ export const AudioItem = ({ audioRef }: AudioInterface) => {
           }
         }}
       >
-        Play
+        'p'
       </button>
-    </div>
+    </Box>
   );
 };

@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
 import { BsFillHeartFill } from "react-icons/bs";
 type LikeItem = {
@@ -27,10 +28,10 @@ const LikeButton = ({ id }: LikeItem) => {
   };
 
   return (
-    <div>
-      <button onClick={pressLike}>Like</button>
-      <BsFillHeartFill className={isLiked ? "liked" : ""} />
-    </div>
+    <Box w="full">
+      {/* <button>Like</button> */}
+      <BsFillHeartFill onClick={pressLike} className={isLiked ? "liked" : ""} />
+    </Box>
   );
 };
 
