@@ -4,15 +4,7 @@ import { Song } from "../types/Globals";
 import "../App.css";
 import { AudioItem } from "./AudioButton";
 import LikeButton from "./LikeButton";
-import {
-  Box,
-  Flex,
-  Heading,
-  HStack,
-  Image,
-  Progress,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, HStack, Image, Text } from "@chakra-ui/react";
 import TrackProgress from "./TrackProgress";
 
 const SongPlayer = ({
@@ -25,7 +17,13 @@ const SongPlayer = ({
   const audioRef = useRef(new Audio(music_file_path));
 
   return (
-    <Flex bg="whiteAlpha.200" w="full" boxShadow={"xl"} p="20px">
+    <Flex
+      borderRadius={10}
+      bg="linear-gradient(to right, #ffffff26 0%, #ffffff33 100%)"
+      w="full"
+      boxShadow={"xl"}
+      p="20px"
+    >
       <Image
         rounded="lg"
         boxSize="90px"
@@ -34,25 +32,27 @@ const SongPlayer = ({
         alt="Image"
         className="artwork"
       />
-      <Box
+      <Flex
         w={"full"}
-        display="flex"
         alignItems={"start"}
+        justifyContent={"space-between"}
         pl="25px"
         flexDirection={"column"}
       >
-        <Heading fontSize={"18px"} color="#000000">
-          {name}
-        </Heading>
-        <Text>{artist_name}</Text>
-      </Box>
-      <Progress value={98} />
-      <TrackProgress audioRef={audioRef} />
+        <Box color="#ccc">
+          <Heading fontSize={"18px"}>{name}</Heading>
+          <Text textAlign={"left"}>{artist_name}</Text>
+        </Box>
 
-      <HStack w="120px">
+        <HStack w="90%" spacing={3}>
+          <TrackProgress audioRef={audioRef} />
+          <LikeButton id={id} />
+        </HStack>
+      </Flex>
+
+      <Box w="120px">
         <AudioItem audioRef={audioRef} />
-        <LikeButton id={id} />
-      </HStack>
+      </Box>
     </Flex>
   );
 };

@@ -5,7 +5,7 @@
 .App {
   text-align: center;
   height: 100vh;
-  background: linear-gradient(#304352, #d7d2cc);
+  background: linear-gradient(#050404, #282727);
 }
 
 .App-logo {
@@ -41,21 +41,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.songs-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.player {
-  width: 100vw;
-  height: 250px;
-  display: flex;
-  justify-content: space-between;
-  overflow: hidden;
 }

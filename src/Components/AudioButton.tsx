@@ -1,4 +1,4 @@
-import { Box, Button } from "@chakra-ui/react";
+import { Box, Button, Fade } from "@chakra-ui/react";
 import React from "react";
 import { BsFillPauseCircleFill, BsFillPlayCircleFill } from "react-icons/bs";
 import { AudioInterface } from "../types/Globals";
@@ -9,6 +9,8 @@ export const AudioItem = ({ audioRef }: AudioInterface) => {
   console.log(audioRef);
   return (
     <Box
+      color="#27ffccf5"
+      display={"flex"}
       onClick={() => {
         setIsPlaying(!isPlaying);
         if (isPlaying) {
@@ -19,17 +21,16 @@ export const AudioItem = ({ audioRef }: AudioInterface) => {
       }}
     >
       {isPlaying ? (
-        <BsFillPauseCircleFill fontSize={"90px"} />
+        <Box>
+          {" "}
+          <BsFillPauseCircleFill fontSize={"90px"} />
+        </Box>
       ) : (
-        <BsFillPlayCircleFill fontSize={"90px"} />
+        <Box>
+          {" "}
+          <BsFillPlayCircleFill fontSize={"90px"} />
+        </Box>
       )}
-      <Button
-        onClick={() => {
-          audioRef.current.currentTime = 0;
-        }}
-      >
-        Click
-      </Button>
     </Box>
   );
 };

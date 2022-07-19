@@ -14,8 +14,10 @@ const TrackProgress = ({ audioRef }: AudioInterface) => {
   });
 
   return (
-    <Box>
-      <Progress value={trackProgress}>{trackProgress}</Progress>
+    <Box w="full">
+      <Progress rounded="xl" value={trackProgress} colorScheme="green">
+        {trackProgress}
+      </Progress>
     </Box>
   );
 };
