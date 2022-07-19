@@ -8,3 +8,7 @@ export interface Song {
   song_genres?: string[];
   music_file_path?: string;
 }
+
+export type AudioInterface = {
+  audioRef: React.MutableRefObject<HTMLAudioElement>;
+};

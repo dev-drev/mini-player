@@ -4,7 +4,16 @@ import { Song } from "../types/Globals";
 import "../App.css";
 import { AudioItem } from "./AudioButton";
 import LikeButton from "./LikeButton";
-import { Box, Flex, Heading, HStack, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  Progress,
+  Text,
+} from "@chakra-ui/react";
+import TrackProgress from "./TrackProgress";
 
 const SongPlayer = ({
   id,
@@ -25,7 +34,6 @@ const SongPlayer = ({
         alt="Image"
         className="artwork"
       />
-
       <Box
         w={"full"}
         display="flex"
@@ -33,14 +41,15 @@ const SongPlayer = ({
         pl="25px"
         flexDirection={"column"}
       >
-        {" "}
         <Heading fontSize={"18px"} color="#000000">
           {name}
         </Heading>
         <Text>{artist_name}</Text>
       </Box>
+      <Progress value={98} />
+      <TrackProgress audioRef={audioRef} />
+
       <HStack w="120px">
-        {" "}
         <AudioItem audioRef={audioRef} />
         <LikeButton id={id} />
       </HStack>
