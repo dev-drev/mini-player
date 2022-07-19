@@ -14,32 +14,24 @@ const SongsList = () => {
     }
     getSongs();
   }, []);
-  console.log(songs);
 
   return (
-    <>
+    <div className="songs-list">
       <h1>SongsList</h1>
-
       {songs.map((item, idx) => {
+        console.log(item);
         return (
-          <div>
-            <p>{item.name}</p>
-            <audio
-              className="audio-control"
-              controls
-              src={item.music_file_path}
-            />
-            <SongPlayer
-              name={item.name}
-              artist_name={item.artist_name}
-              music_file_path={item.music_file_path}
-              cover_image_path={item.cover_image_path}
-              cover_image_aspect_ratio={item.cover_image_aspect_ratio}
-            />
-          </div>
+          <SongPlayer
+            key={idx}
+            likes={item.likes ? item.likes : 0}
+            name={item.name}
+            artist_name={item.artist_name}
+            music_file_path={item.music_file_path}
+            cover_image_path={item.cover_image_path}
+          />
         );
       })}
-    </>
+    </div>
   );
 };
 
