@@ -6,6 +6,7 @@ import { AudioItem } from "./AudioButton";
 import LikeButton from "./LikeButton";
 
 const SongPlayer = ({
+  id,
   name,
   likes,
   artist_name,
@@ -20,7 +21,7 @@ const SongPlayer = ({
       <p>{name}</p>
       <p>{artist_name}</p>
       <AudioItem audioRef={audioRef} />
-      <LikeButton likes={likes} />
+      <LikeButton id={id} likes={likes} />
     </div>
   );
 };

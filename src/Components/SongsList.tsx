@@ -19,10 +19,11 @@ const SongsList = () => {
     <div className="songs-list">
       <h1>SongsList</h1>
       {songs.map((item, idx) => {
-        console.log(item);
+        console.log(item.id);
         return (
           <SongPlayer
             key={idx}
+            id={item.id}
             likes={item.likes ? item.likes : 0}
             name={item.name}
             artist_name={item.artist_name}
