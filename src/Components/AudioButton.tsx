@@ -9,6 +9,7 @@ export const AudioItem = ({ audioRef }: AudioInterface) => {
   console.log(audioRef);
   return (
     <Box
+      cursor={"pointer"}
       color="#27ffccf5"
       display={"flex"}
       onClick={() => {
@@ -23,12 +24,12 @@ export const AudioItem = ({ audioRef }: AudioInterface) => {
       {isPlaying ? (
         <Box>
           {" "}
-          <BsFillPauseCircleFill fontSize={"90px"} />
+          <BsFillPauseCircleFill fontSize={"60px"} />
         </Box>
       ) : (
         <Box>
           {" "}
-          <BsFillPlayCircleFill fontSize={"90px"} />
+          <BsFillPlayCircleFill fontSize={"60px"} />
         </Box>
       )}
     </Box>

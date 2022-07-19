@@ -42,3 +42,14 @@
     transform: rotate(360deg);
   }
 }
+
+input {
+  height: 2px;
+  -webkit-appearance: none;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: #bedcdc;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}

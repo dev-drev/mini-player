@@ -30,10 +30,10 @@ const LikeButton = ({ id }: LikeItem) => {
   };
 
   return (
-    <Box>
+    <Box cursor={"pointer"} _hover={{ boxShadow: "20px 20px 20px" }}>
       <BsFillHeartFill
         onClick={pressLike}
-        color={isLiked ? "#bd66fa" : "white"}
+        color={isLiked ? "#0474ff" : "#ccc"}
       />
     </Box>
   );

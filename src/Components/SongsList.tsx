@@ -18,9 +18,9 @@ const SongsList = () => {
   console.log(songs);
   return (
     <VStack
-      spacing={"30px"}
+      spacing={"20px"}
       w="100vw"
-      p="8"
+      p={["8px", "35px", "30px", "160px"]}
       flexDirection={"column"}
       justifyContent="center"
     >

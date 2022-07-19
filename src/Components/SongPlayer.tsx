@@ -6,7 +6,8 @@ import { AudioItem } from "./AudioButton";
 import LikeButton from "./LikeButton";
 import { Box, Flex, Heading, HStack, Image, Text } from "@chakra-ui/react";
 import TrackProgress from "./TrackProgress";
-
+import ModalApp from "./Modal";
+import { ModalProps } from "../types/Globals";
 const SongPlayer = ({
   id,
   name,
@@ -19,19 +20,21 @@ const SongPlayer = ({
   return (
     <Flex
       borderRadius={10}
-      bg="linear-gradient(to right, #ffffff26 0%, #ffffff33 100%)"
+      bg="linear-gradient(to right, #ffffff18 0%, #ffffff14 100%)"
       w="full"
       boxShadow={"xl"}
       p="20px"
     >
       <Image
-        rounded="lg"
-        boxSize="90px"
+        rounded="md"
+        boxSize="80px"
         objectFit="cover"
         src={cover_image_path}
         alt="Image"
         className="artwork"
       />
+      <ModalApp cover_image_path={cover_image_path ? cover_image_path : ""} />
+
       <Flex
         w={"full"}
         alignItems={"start"}
@@ -39,18 +42,25 @@ const SongPlayer = ({
         pl="25px"
         flexDirection={"column"}
       >
-        <Box color="#ccc">
+        <Box color="#e5e5e5">
           <Heading fontSize={"18px"}>{name}</Heading>
-          <Text textAlign={"left"}>{artist_name}</Text>
+          <Text fontSize={"15px"} textAlign={"left"}>
+            {artist_name}
+          </Text>
         </Box>
 
-        <HStack w="90%" spacing={3}>
+        <HStack w="90%" spacing={5}>
           <TrackProgress audioRef={audioRef} />
           <LikeButton id={id} />
         </HStack>
       </Flex>
 
-      <Box w="120px">
+      <Box
+        w="120px"
+        alignItems={"center"}
+        display="flex"
+        justifyContent={"center"}
+      >
         <AudioItem audioRef={audioRef} />
       </Box>
     </Flex>
