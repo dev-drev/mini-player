@@ -1,8 +1,8 @@
 import { Box, Button, Flex, Progress, Text } from "@chakra-ui/react";
 
 import React, { useEffect, useState } from "react";
-import "../App.css";
-import { AudioInterface } from "../types/Globals";
+import "../../App.css";
+import { AudioInterface } from "../../types/Globals";
 
 const TrackProgress = ({ audioRef }: AudioInterface) => {
   const [trackProgress, setTrackProgress] = useState(0);

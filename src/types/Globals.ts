@@ -4,21 +4,11 @@ export interface Song {
   artist_name?: string;
   song_release?: string;
   likes?: number | any;
+  plays?: number;
   cover_image_path?: string;
-  song_genres?: string[];
   music_file_path?: string;
 }
 
 export type AudioInterface = {
   audioRef: React.MutableRefObject<HTMLAudioElement>;
 };
-
-export interface ModalProps {
-  id?: string;
-  cover_image_path?: string;
-  name?: string;
-  artist_name?: string;
-  song_release?: string;
-  likes?: number;
-  song_genres?: string[];
-}

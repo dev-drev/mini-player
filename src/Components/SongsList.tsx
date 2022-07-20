@@ -30,8 +30,10 @@ const SongsList = () => {
           <SongPlayer
             key={idx}
             id={item.id}
+            plays={item.plays}
             likes={item.likes ? item.likes : 0}
             name={item.name}
+            song_release={item.song_release}
             artist_name={item.artist_name}
             music_file_path={item.music_file_path}
             cover_image_path={item.cover_image_path}

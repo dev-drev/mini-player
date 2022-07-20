@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
 import { BsFillHeartFill } from "react-icons/bs";
-import "../App.css";
+import "../../App.css";
 
 type LikeItem = {
   id: string;
