@@ -1,5 +1,5 @@
-import { Box, Center, Flex, VStack } from "@chakra-ui/react";
 import React, { useEffect } from "react";
+import { VStack } from "@chakra-ui/react";
 import { Song } from "../types/Globals";
 import SongPlayer from "./SongPlayer";
 

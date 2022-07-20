@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Badge,
   Button,
@@ -12,14 +13,11 @@ import {
   ModalHeader,
   ModalOverlay,
   Stat,
-  StatArrow,
   StatGroup,
-  StatHelpText,
   StatLabel,
   StatNumber,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
 import { Song } from "../../types/Globals";
 
 const ModalApp = ({
@@ -35,6 +33,7 @@ const ModalApp = ({
   return (
     <Flex w={"150px"} justifyContent="center">
       <Image
+        cursor={"pointer"}
         onClick={onOpen}
         rounded="md"
         boxSize="80px"
@@ -45,7 +44,7 @@ const ModalApp = ({
       />
 
       <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay bgColor="blackAlpha.400" />
+        <ModalOverlay bgColor="blackAlpha.500" />
         <ModalContent w="80%" h="60% , 100%">
           <ModalHeader>
             <b>{artist_name}</b>- {name}
@@ -60,8 +59,9 @@ const ModalApp = ({
               alt="Image"
               className="artwork"
             />
-            <Center></Center>
-            <Badge>{song_release ? song_release.slice(0, 10) : ""}</Badge>
+            <Badge mb="10px">
+              {song_release ? song_release.slice(0, 10) : ""}
+            </Badge>
             <StatGroup>
               <Stat>
                 <StatLabel>Likes</StatLabel>

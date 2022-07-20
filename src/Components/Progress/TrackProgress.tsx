@@ -1,6 +1,6 @@
-import { Box, Button, Flex, Progress, Text } from "@chakra-ui/react";
-
 import React, { useEffect, useState } from "react";
+import { Flex } from "@chakra-ui/react";
+
 import "../../App.css";
 import { AudioInterface } from "../../types/Globals";
 

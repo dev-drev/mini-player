@@ -1,5 +1,5 @@
-import { Box, Button, Fade } from "@chakra-ui/react";
 import React from "react";
+import { Box } from "@chakra-ui/react";
 import { BsFillPauseCircleFill, BsFillPlayCircleFill } from "react-icons/bs";
 import { AudioInterface } from "../../types/Globals";
 
